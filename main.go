@@ -82,8 +82,8 @@ func main() {
 			WebviewIsTransparent: false,
 			WindowIsTranslucent:  true,
 			About: &mac.AboutInfo{
-				Title:   "Wails Template Vue",
-				Message: "A Wails template based on Vue and Vue-Router",
+				Title:   "backend-generator",
+				Message: "generator backend code for gin,fiber and so on...",
 				Icon:    icon,
 			},
 		},
