@@ -13,10 +13,23 @@
         </el-select>
       </el-form-item>
       <el-divider content-position="left">
+        {{ $t("setting.developEnvironment") }}
+      </el-divider>
+      <el-form-item label="go version">
+        <el-tag v-if="goVersion === ''" size="large" type="danger" effect="dark">{{ $t('setting.goInstall') }}</el-tag>
+        <span>{{ goVersion }}</span>
+      </el-form-item>
+      <el-divider content-position="left">
         {{ $t("setting.about") }}
       </el-divider>
+      <el-form-item :label="$t('app.author')">
+        <el-button type="text" @click="Dinglz">dinglz</el-button>
+      </el-form-item>
       <el-form-item :label="$t('setting.about')">
         <el-button type="primary" @click="OpenDetail">{{ $t('setting.aboutText') }}</el-button>
+      </el-form-item>
+      <el-form-item :label="$t('setting.version')">
+        <el-tag size="large">{{ version }}</el-tag>
       </el-form-item>
     </el-form>
     <div style="text-align: right">
@@ -26,18 +39,20 @@
 </template>
 <script>
 import {reactive} from "vue";
-import {SettingGet, SettingSet} from "../../wailsjs/go/main/App.js";
+import {GolangVersion, SettingGet, SettingSet, Version} from "../../wailsjs/go/main/App.js";
 import {ElMessage} from "element-plus";
 import {BrowserOpenURL} from "../../wailsjs/runtime/runtime.js";
 
 export default {
-  mounted() {
+  async mounted() {
     SettingGet().then(res => {
       if (res !== "{}") {
         this.settingForm = JSON.parse(res)
       }
       this.loading = false
     })
+    this.version = await Version()
+    this.goVersion = await GolangVersion()
   },
   data() {
     return {
@@ -46,7 +61,9 @@ export default {
         language: {
           locale: "",
         },
-      })
+      }),
+      version: "",
+      goVersion: ""
     }
   },
   methods: {
@@ -62,6 +79,9 @@ export default {
     },
     OpenDetail() {
       BrowserOpenURL("https://github.com/dingdinglz/backend-generator")
+    },
+    Dinglz() {
+      BrowserOpenURL("https://github.com/dingdinglz")
     }
   }
 }
