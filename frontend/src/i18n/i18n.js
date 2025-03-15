@@ -109,7 +109,7 @@ export const i18n = createI18n({
                 initProject: "プロジェクトの初期化",
                 init: "初期化",
                 projectName: "プロジェクト名",
-                author: "作成者",
+                author: "作者",
                 fieldMust: "フィールドは空にできません！",
                 initOK: "初期化に成功しました！",
             },
@@ -131,11 +131,16 @@ export const i18n = createI18n({
                 closeProject: 'プロジェクトを閉じる',
                 project: 'プロジェクト',
                 save: 'プロジェクトを保存',
-                saveIntroduce: "すべての変更は、プロジェクトを保存した後にのみ成功します！"
+                saveIntroduce: "すべての変更は、プロジェクトを保存後に成功裏に保存されます！",
+                generate: "コードを生成",
+                generatorTip: "生成するフレームワークを選択してください",
+                generatorUn: "このフレームワークのコードジェネレータは開発中です...",
+                generateNone: "まずフレームワークを選択してください！",
+                generateOK: "生成に成功しました！"
             },
             middleware: {
                 introduce: {
-                    i: "ここではミドルウェアを追加または削除できます。ミドルウェアはグローバルまたは特定のルートグループに適用できますが、事前にここで定義する必要があります。"
+                    i: "ここではミドルウェアを追加または削除できます。ミドルウェアはグローバルまたは特定のルートグループに適用され、事前に定義する必要があります。"
                 },
                 add: "ミドルウェアを追加",
                 input: "ミドルウェア名を入力してください",
@@ -149,6 +154,7 @@ export const i18n = createI18n({
                 input: "タイプ名を入力してください",
                 addField: "フィールドを追加",
                 field: {
+                    delete: "フィールドを削除",
                     name: "フィールド名",
                     type: "タイプ",
                     optional: "オプション",
@@ -158,6 +164,16 @@ export const i18n = createI18n({
                     optional: "リクエストパラメータとして設定すると、空にできます。",
                     omitempty: "JSONを生成する際、このフィールドが空の場合、生成されません。"
                 }
+            },
+            methods: {
+                introduce: {
+                    i: "ルートを定義"
+                },
+                req: "リクエストボディ",
+                resp: "レスポンスボディ",
+                addMethod: "ルートを追加",
+                addGroup: "ルートグループを追加",
+                selectMiddleware: "ミドルウェアを選択してください"
             }
         },
         en: {
@@ -201,11 +217,16 @@ export const i18n = createI18n({
                 closeProject: 'Close Project',
                 project: 'Project',
                 save: 'Save Project',
-                saveIntroduce: "All changes will only be successfully saved after saving the project!"
+                saveIntroduce: "All changes will be successfully saved after saving the project!",
+                generate: "Generate Code",
+                generatorTip: "Please select a framework to generate",
+                generatorUn: "The code generator for this framework is under development...",
+                generateNone: "Please select a framework first!",
+                generateOK: "Generated successfully!"
             },
             middleware: {
                 introduce: {
-                    i: "Here you can add or remove middleware. Middleware can be applied globally or to a specific route group, but it needs to be defined here in advance."
+                    i: "You can add or remove middleware here. Middleware can be applied globally or to a specific route group and needs to be defined in advance."
                 },
                 add: "Add Middleware",
                 input: "Please enter the middleware name",
@@ -219,6 +240,7 @@ export const i18n = createI18n({
                 input: "Please enter the type name",
                 addField: "Add Field",
                 field: {
+                    delete: "Delete Field",
                     name: "Field Name",
                     type: "Type",
                     optional: "Optional",
@@ -228,6 +250,16 @@ export const i18n = createI18n({
                     optional: "When set as a request parameter, it can be empty.",
                     omitempty: "When generating JSON, if this field is empty, it will not be generated."
                 }
+            },
+            methods: {
+                introduce: {
+                    i: "Define routes"
+                },
+                req: "Request Body",
+                resp: "Response Body",
+                addMethod: "Add Route",
+                addGroup: "Add Route Group",
+                selectMiddleware: "Please select middleware"
             }
         },
     }
