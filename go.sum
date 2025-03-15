@@ -1,3 +1,7 @@
+github.com/Xuanwo/gg v0.3.0 h1:jHasK7tJ4o/IjpcxPbabQ4zVO+hln85DvNYhq5GamcA=
+github.com/Xuanwo/gg v0.3.0/go.mod h1:0fLiiSxR87u2UA0ZNZiKZXuz3jnJdbDHWtU2xpdcH3s=
+github.com/Xuanwo/go-bufferpool v0.2.0 h1:DXzqJD9lJufXbT/03GrcEvYOs4gXYUj9/g5yi6Q9rUw=
+github.com/Xuanwo/go-bufferpool v0.2.0/go.mod h1:Mle++9GGouhOwGj52i9PJLNAPmW2nb8PWBP7JJzNCzk=
 github.com/bep/debounce v1.2.1 h1:v67fRdBA9UQu2NhLFXrSg0Brw7CexQekrBwDMM8bzeY=
 github.com/bep/debounce v1.2.1/go.mod h1:H8yggRPQKLUhUoqrJC1bO2xNya7vanpDl7xR3ISbCJ0=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=

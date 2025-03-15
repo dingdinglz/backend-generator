@@ -10,17 +10,37 @@
     <el-button type="danger" @click="CloseProject">{{ $t("index.closeProject") }}</el-button>
     <br/>
     <br/>
-    <el-button type="primary" size="large"></el-button>
+    <el-row>
+      <el-col :span="18">
+        <el-select :placeholder="$t('index.generatorTip')" v-model="generator">
+          <el-option label="Gin" value="gin"></el-option>
+          <el-option label="GoFiber" value="fiber"></el-option>
+          <el-option label="GoZero" value="zero"></el-option>
+        </el-select>
+      </el-col>
+      <el-col :span="1">
+      </el-col>
+      <el-col :span="3">
+        <el-button type="primary" @click="Generate">{{ $t("index.generate") }}</el-button>
+      </el-col>
+    </el-row>
   </div>
 </template>
 <script>
-import {WorkSpaceConfigGet, WorkSpaceConfigSave, WorkSpaceGet, WorkSpaceSet} from "../../wailsjs/go/main/App.js";
+import {
+  GenerateCode,
+  WorkSpaceConfigGet,
+  WorkSpaceConfigSave,
+  WorkSpaceGet,
+  WorkSpaceSet
+} from "../../wailsjs/go/main/App.js";
 import {ElMessage} from "element-plus";
 
 export default {
   data() {
     return {
       workspace: "",
+      generator: "",
     }
   },
   async mounted() {
@@ -44,6 +64,22 @@ export default {
       WorkSpaceConfigSave(JSON.stringify(this.$store.state.workspaceConfig))
           .then(() => {
             ElMessage.success(that.$t('common.saveOK'))
+          })
+    },
+    Generate() {
+      if (this.generator === "") {
+        ElMessage.error(this.$t("index.generateNone"))
+        return
+      }
+      const that = this
+      GenerateCode(this.generator)
+          .then(res => {
+            if (res === "err") {
+              ElMessage.error(that.$t("index.generatorUn"))
+            }
+            if (res === "") {
+              ElMessage.success(that.$t("index.generateOK"))
+            }
           })
     }
   },

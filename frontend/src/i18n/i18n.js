@@ -45,7 +45,12 @@ export const i18n = createI18n({
                 closeProject: '关闭项目',
                 project: '项目',
                 save: '保存项目',
-                saveIntroduce: "所有更改均在保存项目中保存后才成功保存！"
+                saveIntroduce: "所有更改均在保存项目中保存后才成功保存！",
+                generate: "生成代码",
+                generatorTip: "请选择要生成的框架",
+                generatorUn: "该框架的代码生成器正在开发中...",
+                generateNone: "请先选择一个框架！",
+                generateOK: "生成成功！"
             },
             middleware: {
                 introduce: {
