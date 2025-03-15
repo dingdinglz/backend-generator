@@ -14,6 +14,7 @@ Backend-generator is a tool that helps developers quickly generate backend code 
 - Increases development speed and efficiency.
 - Supports generating database code, such as gorm.
 - Simple and intuitive visual UI interface.
+- Support multiple languages, such as Chinese, English, and Japanese.
 
 ## Supported Frameworks
 
@@ -35,12 +36,14 @@ Backend-generator is a tool that helps developers quickly generate backend code 
 3. Choose your preferred web framework and generate the corresponding code.
 4. Implement the corresponding middleware in the `middleware` folder and the routes in the `route` folder to efficiently develop a RESTful API application.
 
-## Build
+## Run
 
-This project is developed based on Wails. Please install [Wails-cli](https://wails.io/docs/gettingstarted/installation) before building.
+You can also directly download and use the executable file from the release.
+
+This project is developed based on Wails. Please install [Wails-cli](https://wails.io/docs/gettingstarted/installation) before running.
 
 ```bash
-wails build
+wails dev
 ```
 
 ## Showcase
