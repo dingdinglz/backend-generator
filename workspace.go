@@ -4,7 +4,6 @@ import (
 	"backend-generator/global"
 	"backend-generator/tool"
 	"encoding/json"
-	"fmt"
 	"os"
 	"path/filepath"
 
@@ -43,7 +42,6 @@ func (*App) WorkSpaceInit(s string) {
 
 func (*App) WorkSpaceConfigGet() string {
 	res, _ := json.Marshal(global.WorkSpaceConfig)
-	fmt.Println(global.WorkSpaceConfig.Methods)
 	return string(res)
 }
 

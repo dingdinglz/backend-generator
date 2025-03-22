@@ -4,4 +4,5 @@ export const routes = [
     {path: '/middleware', name: 'middleware', component: () => import('../pages/middleware.vue')},
     {path: '/types', name: 'types', component: () => import('../pages/types.vue')},
     {path: '/methods', name: 'methods', component: () => import('../pages/methods.vue')},
+    {path: '/configs', name: 'config', component: () => import('../pages/config.vue')},
 ]

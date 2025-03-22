@@ -46,6 +46,25 @@ export const store = createStore({
                     break
                 }
             }
+        },
+        newConfig(state) {
+            if (state.workspaceConfig.configs === null) {
+                state.workspaceConfig.configs = []
+            }
+            state.workspaceConfig.configs.push({
+                name: "",
+                type: ""
+            })
+        },
+        deleteConfig(state, name) {
+            if (state.workspaceConfig.configs === null) {
+            }
+            for (let i = 0; i < state.workspaceConfig.configs.length; i++) {
+                if (state.workspaceConfig.configs[i].name === name) {
+                    state.workspaceConfig.configs.splice(i, 1)
+                    break
+                }
+            }
         }
     }
 })

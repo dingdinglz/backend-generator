@@ -37,7 +37,6 @@
 <script setup>
 import FieldDescription from "./FieldDescription.vue";
 import {useStore} from "vuex";
-import {reactive} from "vue";
 
 const props = defineProps(["method", "before"])
 const store = useStore()
