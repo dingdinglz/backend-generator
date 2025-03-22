@@ -113,7 +113,8 @@ export const i18n = createI18n({
                     index: "ホーム",
                     middleware: "ミドルウェア",
                     types: "グローバルタイプ",
-                    methods: "ルート"
+                    methods: "ルート",
+                    config: "設定"
                 },
                 initProject: "プロジェクトの初期化",
                 init: "初期化",
@@ -130,7 +131,7 @@ export const i18n = createI18n({
                 saveOk: "保存に成功しました！",
                 about: "について",
                 aboutText: "詳細を見る",
-                version: "バージョン",
+                version: "バージョン番号",
                 developEnvironment: "開発環境",
                 goInstall: "まずGo言語をインストールしてください！",
             },
@@ -140,16 +141,16 @@ export const i18n = createI18n({
                 closeProject: 'プロジェクトを閉じる',
                 project: 'プロジェクト',
                 save: 'プロジェクトを保存',
-                saveIntroduce: "すべての変更は、プロジェクトを保存後に成功裏に保存されます！",
+                saveIntroduce: "すべての変更は、プロジェクトを保存した後に成功裏に保存されます！",
                 generate: "コードを生成",
                 generatorTip: "生成するフレームワークを選択してください",
-                generatorUn: "このフレームワークのコードジェネレータは開発中です...",
+                generatorUn: "このフレームワークのコード生成器は開発中です...",
                 generateNone: "まずフレームワークを選択してください！",
                 generateOK: "生成に成功しました！"
             },
             middleware: {
                 introduce: {
-                    i: "ここではミドルウェアを追加または削除できます。ミドルウェアはグローバルまたは特定のルートグループに適用され、事前に定義する必要があります。"
+                    i: "ここではミドルウェアを追加または削除できます。ミドルウェアはグローバルまたは特定のルートグループに適用され、事前にここで定義する必要があります。"
                 },
                 add: "ミドルウェアを追加",
                 input: "ミドルウェア名を入力してください",
@@ -170,19 +171,27 @@ export const i18n = createI18n({
                     omitempty: "生成しない"
                 },
                 tips: {
-                    optional: "リクエストパラメータとして設定すると、空にできます。",
-                    omitempty: "JSONを生成する際、このフィールドが空の場合、生成されません。"
+                    optional: "これをリクエストパラメータとして設定すると、空にできます。",
+                    omitempty: "JSONを生成する際に、このフィールドが空の場合は生成されません。"
                 }
             },
             methods: {
                 introduce: {
-                    i: "ルートを定義"
+                    i: "ルートを定義する"
                 },
                 req: "リクエストボディ",
                 resp: "レスポンスボディ",
                 addMethod: "ルートを追加",
                 addGroup: "ルートグループを追加",
                 selectMiddleware: "ミドルウェアを選択してください"
+            },
+            configs: {
+                introduce: {
+                    i: "設定はプログラムの起動時にJSONのセットを読み込みます。ここでフィールドを定義できます。"
+                },
+                add: "設定を追加",
+                name: "設定名",
+                type: "設定タイプ"
             }
         },
         en: {
@@ -199,7 +208,8 @@ export const i18n = createI18n({
                     index: "Home",
                     middleware: "Middleware",
                     types: "Global Types",
-                    methods: "Routes"
+                    methods: "Routes",
+                    config: "Config"
                 },
                 initProject: "Initialize Project",
                 init: "Initialize",
@@ -216,7 +226,7 @@ export const i18n = createI18n({
                 saveOk: "Saved successfully!",
                 about: "About",
                 aboutText: "View Details",
-                version: "Version",
+                version: "Version Number",
                 developEnvironment: "Development Environment",
                 goInstall: "Please install Go language first!",
             },
@@ -226,7 +236,7 @@ export const i18n = createI18n({
                 closeProject: 'Close Project',
                 project: 'Project',
                 save: 'Save Project',
-                saveIntroduce: "All changes will be successfully saved after saving the project!",
+                saveIntroduce: "All changes will only be successfully saved after saving the project!",
                 generate: "Generate Code",
                 generatorTip: "Please select a framework to generate",
                 generatorUn: "The code generator for this framework is under development...",
@@ -235,7 +245,7 @@ export const i18n = createI18n({
             },
             middleware: {
                 introduce: {
-                    i: "You can add or remove middleware here. Middleware can be applied globally or to a specific route group and needs to be defined in advance."
+                    i: "Here you can add or remove middleware. Middleware can be applied globally or to a specific route group, and needs to be defined here in advance."
                 },
                 add: "Add Middleware",
                 input: "Please enter the middleware name",
@@ -269,6 +279,14 @@ export const i18n = createI18n({
                 addMethod: "Add Route",
                 addGroup: "Add Route Group",
                 selectMiddleware: "Please select middleware"
+            },
+            configs: {
+                introduce: {
+                    i: "Configurations will load a set of JSON when the program starts. You can define fields here."
+                },
+                add: "Add Config",
+                name: "Config Name",
+                type: "Config Type"
             }
         },
     }
