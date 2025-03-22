@@ -7,4 +7,5 @@ type BackendGeneratorConfig struct {
 	Types       []OpenType    `json:"types"`
 	Middlewares []string      `json:"middlewares"`
 	Methods     []interface{} `json:"methods"`
+	Configs     []ConfigField `json:"configs"`
 }

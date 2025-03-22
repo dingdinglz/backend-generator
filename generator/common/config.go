@@ -1,6 +1,7 @@
 package common
 
 import (
+	"backend-generator/global"
 	"backend-generator/tool"
 	"os"
 	"path/filepath"
@@ -16,7 +17,10 @@ func GenerateConfig(_path string) {
 	// config.go
 	config := gg.NewGroup()
 	config.AddPackage("config")
-	config.NewStruct("Config").AddField("Host", "string `json:\"host\"`").AddField("Port", "int `json:\"port\"`")
+	configField := config.NewStruct("Config").AddField("Host", "string `json:\"host\"`").AddField("Port", "int `json:\"port\"`")
+	for _, configItem := range global.WorkSpaceConfig.Configs {
+		configField.AddField(tool.StringFirstUpper(configItem.Name), configItem.Type+" `json:\""+configItem.Name+"\"`")
+	}
 	os.WriteFile(filepath.Join(workPath, "config.go"), []byte(config.String()), os.ModePerm)
 
 	// load.go

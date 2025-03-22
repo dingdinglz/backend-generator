@@ -18,7 +18,8 @@ export const i18n = createI18n({
                     index: "主页",
                     middleware: "中间件",
                     types: "全局类型",
-                    methods: "路由"
+                    methods: "路由",
+                    config: "配置"
                 },
                 initProject: "初始化项目",
                 init: "初始化",
@@ -88,6 +89,14 @@ export const i18n = createI18n({
                 addMethod: "添加路由",
                 addGroup: "添加路由组",
                 selectMiddleware: "请选择中间件"
+            },
+            configs: {
+                introduce: {
+                    i: "配置会在程序启动时加载一组json，您可以在此定义字段"
+                },
+                add: "添加配置",
+                name: "配置名",
+                type: "配置类型"
             }
         },
         ja: {

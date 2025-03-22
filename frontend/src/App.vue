@@ -28,6 +28,12 @@
               </el-icon>
               <span>{{ $t("app.menu.methods") }}</span>
             </el-menu-item>
+            <el-menu-item index="5">
+              <el-icon>
+                <Document/>
+              </el-icon>
+              <span>{{ $t("app.menu.config") }}</span>
+            </el-menu-item>
           </div>
           <el-menu-item index="0">
             <el-icon>
@@ -67,14 +73,14 @@
   </el-dialog>
 </template>
 <script>
-import {House, Setting, Link, MessageBox, Grid} from "@element-plus/icons-vue";
+import {House, Setting, Link, MessageBox, Grid, Document} from "@element-plus/icons-vue";
 import {SettingGet, Version, WorkSpaceConfigGet, WorkSpaceGet, WorkSpaceInit} from "../wailsjs/go/main/App.js";
 import {EventsOn} from "../wailsjs/runtime/runtime.js";
 import {reactive} from "vue";
 import {ElMessage} from "element-plus";
 
 export default {
-  components: {Grid, MessageBox, House, Setting, Link},
+  components: {Document, Grid, MessageBox, House, Setting, Link},
   data() {
     return {
       initProjectModalVisible: false,
@@ -118,6 +124,9 @@ export default {
           break
         case "4":
           window.location.href = "/#/methods"
+          break
+        case "5":
+          window.location.href = "/#/configs"
           break
       }
     },
