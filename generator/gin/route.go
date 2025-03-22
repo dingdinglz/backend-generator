@@ -39,9 +39,14 @@ func (generator *Generator) Route(nowPath string, workGroup []interface{}) {
 					} else {
 						sfieldName = strings.ToUpper(sfieldName)
 					}
-					tag := " `json:\"" + fieldName + "\"`"
+					tag := " `json:\"" + fieldName + "\""
 					if fieldName == "" {
 						tag = ""
+					} else {
+						if !reqField["optional"].(bool) {
+							tag += " bg:\"must\""
+						}
+						tag += "`"
 					}
 					typeName := reqField["type"].(string)
 					if tool.HaveType(typeName) {
