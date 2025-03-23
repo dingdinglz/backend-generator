@@ -10,7 +10,8 @@ export const i18n = createI18n({
                 save: "保存",
                 delete: "删除",
                 saveOK: "保存成功！",
-                operation: "操作"
+                operation: "操作",
+                type: "类型"
             },
             app: {
                 menu: {
@@ -19,7 +20,8 @@ export const i18n = createI18n({
                     middleware: "中间件",
                     types: "全局类型",
                     methods: "路由",
-                    config: "配置"
+                    config: "配置",
+                    database: "数据库"
                 },
                 initProject: "初始化项目",
                 init: "初始化",
@@ -97,6 +99,17 @@ export const i18n = createI18n({
                 add: "添加配置",
                 name: "配置名",
                 type: "配置类型"
+            },
+            database: {
+                introduce: {
+                    i: "数据库用于生成数据库的orm代码，与其他内容不同的是，数据库部分单独生成代码，作为一个单独的板块"
+                },
+                chooseFramework: "请选择要生成的框架",
+                addTable: "添加表",
+                inputTable: "请输入表名",
+                tableName: "表名",
+                columnName: "字段名",
+                addColumn: "添加字段"
             }
         },
         ja: {

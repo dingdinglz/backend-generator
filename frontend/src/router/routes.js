@@ -5,4 +5,5 @@ export const routes = [
     {path: '/types', name: 'types', component: () => import('../pages/types.vue')},
     {path: '/methods', name: 'methods', component: () => import('../pages/methods.vue')},
     {path: '/configs', name: 'config', component: () => import('../pages/config.vue')},
+    {path: '/database', name: 'database', component: () => import('../pages/database.vue')},
 ]
