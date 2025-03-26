@@ -56,6 +56,16 @@ Some UI screenshots are as follows:
 
 ![UI Screenshot 3](image/en-3.png)
 
+![UI Screenshot 4](image/en-4.png)
+
+![UI Screenshot 5](image/en-5.png)
+
+![UI Screenshot 6](image/en-6.png)
+
+![UI Screenshot 7](image/en-7.png)
+
+![UI Screenshot 8](image/en-8.png)
+
 ## Contribution
 
 We welcome community contributions!

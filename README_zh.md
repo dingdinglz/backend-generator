@@ -54,6 +54,16 @@ wails dev
 
 ![UI截图2](image/zh-2.png)
 
+![UI截图3](image/zh-3.png)
+
+![UI截图4](image/zh-4.png)
+
+![UI截图5](image/zh-5.png)
+
+![UI截图6](image/zh-6.png)
+
+![UI截图7](image/zh-7.png)
+
 ## 贡献
 
 我们欢迎社区的贡献！
