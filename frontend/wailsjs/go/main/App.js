@@ -6,6 +6,10 @@ export function GenerateCode(arg1) {
   return window['go']['main']['App']['GenerateCode'](arg1);
 }
 
+export function GenerateDatabaseCode(arg1) {
+  return window['go']['main']['App']['GenerateDatabaseCode'](arg1);
+}
+
 export function GolangVersion() {
   return window['go']['main']['App']['GolangVersion']();
 }

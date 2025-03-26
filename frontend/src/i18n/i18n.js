@@ -11,7 +11,9 @@ export const i18n = createI18n({
                 delete: "删除",
                 saveOK: "保存成功！",
                 operation: "操作",
-                type: "类型"
+                type: "类型",
+                generateOK: "生成成功！",
+                close: "关闭"
             },
             app: {
                 menu: {
@@ -109,7 +111,18 @@ export const i18n = createI18n({
                 inputTable: "请输入表名",
                 tableName: "表名",
                 columnName: "字段名",
-                addColumn: "添加字段"
+                addColumn: "添加字段",
+                unsupport: "不支持的框架！",
+                chooseOne: "请最少选择一个框架！",
+                code: "生成的代码使用说明",
+                codeIntroduce: {
+                    i: "与web框架生成的代码不同，生成的orm代码位于database包中，为每个表生成了一个struct，每个struct都对应一个New..Model的函数，每个struct默认携带了Create、Delete、Update、Get四个方法",
+                    ii: "New以后，需要统一使用database.Open()进行初始化（不管New多少个，只需要open一次）",
+                    iii: "下面是假设有个Test表的使用方法",
+                    iiii: "所以，你可以把model放进servicecontext中，例如把sctx.go文件改成类似如下",
+                    iiiii: "然后，你只需要在main.go中database.Open一下，就可以在sctx中使用Model啦"
+                },
+                showCode: "显示生成后代码使用说明"
             }
         },
         ja: {

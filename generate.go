@@ -3,6 +3,7 @@ package main
 import (
 	"backend-generator/generator/common"
 	"backend-generator/generator/gin"
+	"backend-generator/generator/gorm"
 	"backend-generator/global"
 	"backend-generator/tool"
 	"path/filepath"
@@ -30,5 +31,15 @@ func (app *App) GenerateCode(t string) string {
 	Generator.Bind()
 	Generator.Main()
 	tool.CMDRun(global.WorkSpace, "go", "mod", "tidy")
+	return ""
+}
+
+func (app *App) GenerateDatabaseCode(t string) string {
+	switch t {
+	case "gorm":
+		gorm.Generate()
+	default:
+		return "err"
+	}
 	return ""
 }

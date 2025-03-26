@@ -34,13 +34,13 @@
               </el-icon>
               <span>{{ $t("app.menu.config") }}</span>
             </el-menu-item>
+            <el-menu-item index="6">
+              <el-icon>
+                <DataAnalysis/>
+              </el-icon>
+              <span>{{ $t("app.menu.database") }}</span>
+            </el-menu-item>
           </div>
-          <el-menu-item index="6">
-            <el-icon>
-              <DataAnalysis/>
-            </el-icon>
-            <span>{{ $t("app.menu.database") }}</span>
-          </el-menu-item>
           <el-menu-item index="0">
             <el-icon>
               <Setting/>
