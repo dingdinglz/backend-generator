@@ -10,7 +10,10 @@ export const i18n = createI18n({
                 save: "保存",
                 delete: "删除",
                 saveOK: "保存成功！",
-                operation: "操作"
+                operation: "操作",
+                type: "类型",
+                generateOK: "生成成功！",
+                close: "关闭"
             },
             app: {
                 menu: {
@@ -19,7 +22,8 @@ export const i18n = createI18n({
                     middleware: "中间件",
                     types: "全局类型",
                     methods: "路由",
-                    config: "配置"
+                    config: "配置",
+                    database: "数据库"
                 },
                 initProject: "初始化项目",
                 init: "初始化",
@@ -97,6 +101,28 @@ export const i18n = createI18n({
                 add: "添加配置",
                 name: "配置名",
                 type: "配置类型"
+            },
+            database: {
+                introduce: {
+                    i: "数据库用于生成数据库的orm代码，与其他内容不同的是，数据库部分单独生成代码，作为一个单独的板块"
+                },
+                chooseFramework: "请选择要生成的框架",
+                addTable: "添加表",
+                inputTable: "请输入表名",
+                tableName: "表名",
+                columnName: "字段名",
+                addColumn: "添加字段",
+                unsupport: "不支持的框架！",
+                chooseOne: "请最少选择一个框架！",
+                code: "生成的代码使用说明",
+                codeIntroduce: {
+                    i: "与web框架生成的代码不同，生成的orm代码位于database包中，为每个表生成了一个struct，每个struct都对应一个New..Model的函数，每个struct默认携带了Create、Delete、Update、Get四个方法",
+                    ii: "New以后，需要统一使用database.Open()进行初始化（不管New多少个，只需要open一次）",
+                    iii: "下面是假设有个Test表的使用方法",
+                    iiii: "所以，你可以把model放进servicecontext中，例如把sctx.go文件改成类似如下",
+                    iiiii: "然后，你只需要在main.go中database.Open一下，就可以在sctx中使用Model啦"
+                },
+                showCode: "显示生成后代码使用说明"
             }
         },
         ja: {
@@ -105,7 +131,10 @@ export const i18n = createI18n({
                 save: "保存",
                 delete: "削除",
                 saveOK: "保存に成功しました！",
-                operation: "操作"
+                operation: "操作",
+                type: "タイプ",
+                generateOK: "生成に成功しました！",
+                close: "閉じる"
             },
             app: {
                 menu: {
@@ -114,7 +143,8 @@ export const i18n = createI18n({
                     middleware: "ミドルウェア",
                     types: "グローバルタイプ",
                     methods: "ルート",
-                    config: "設定"
+                    config: "設定",
+                    database: "データベース"
                 },
                 initProject: "プロジェクトの初期化",
                 init: "初期化",
@@ -133,7 +163,7 @@ export const i18n = createI18n({
                 aboutText: "詳細を見る",
                 version: "バージョン番号",
                 developEnvironment: "開発環境",
-                goInstall: "まずGo言語をインストールしてください！",
+                goInstall: "Go言語をインストールしてください！",
             },
             index: {
                 openProject: 'プロジェクトを開く',
@@ -144,13 +174,13 @@ export const i18n = createI18n({
                 saveIntroduce: "すべての変更は、プロジェクトを保存した後に成功裏に保存されます！",
                 generate: "コードを生成",
                 generatorTip: "生成するフレームワークを選択してください",
-                generatorUn: "このフレームワークのコード生成器は開発中です...",
-                generateNone: "まずフレームワークを選択してください！",
+                generatorUn: "このフレームワークのコード生成は開発中です...",
+                generateNone: "フレームワークを選択してください！",
                 generateOK: "生成に成功しました！"
             },
             middleware: {
                 introduce: {
-                    i: "ここではミドルウェアを追加または削除できます。ミドルウェアはグローバルまたは特定のルートグループに適用され、事前にここで定義する必要があります。"
+                    i: "ここではミドルウェアを追加または削除できます。ミドルウェアはグローバルまたは特定のルートグループに適用できます。事前にここで定義する必要があります。"
                 },
                 add: "ミドルウェアを追加",
                 input: "ミドルウェア名を入力してください",
@@ -168,16 +198,16 @@ export const i18n = createI18n({
                     name: "フィールド名",
                     type: "タイプ",
                     optional: "オプション",
-                    omitempty: "生成しない"
+                    omitempty: "生成しない場合あり"
                 },
                 tips: {
-                    optional: "これをリクエストパラメータとして設定すると、空にできます。",
-                    omitempty: "JSONを生成する際に、このフィールドが空の場合は生成されません。"
+                    optional: "リクエストパラメータとして設定する場合、空にできます。",
+                    omitempty: "JSONを生成する際、このフィールドが空の場合、生成されません。"
                 }
             },
             methods: {
                 introduce: {
-                    i: "ルートを定義する"
+                    i: "ルートを定義"
                 },
                 req: "リクエストボディ",
                 resp: "レスポンスボディ",
@@ -187,11 +217,33 @@ export const i18n = createI18n({
             },
             configs: {
                 introduce: {
-                    i: "設定はプログラムの起動時にJSONのセットを読み込みます。ここでフィールドを定義できます。"
+                    i: "設定はプログラムの起動時にJSONのセットが読み込まれます。ここでフィールドを定義できます。"
                 },
                 add: "設定を追加",
                 name: "設定名",
                 type: "設定タイプ"
+            },
+            database: {
+                introduce: {
+                    i: "データベースはデータベースのORMコードを生成するために使用されます。他の部分とは異なり、データベース部分はコードを別々に生成し、独立したモジュールとして扱われます。"
+                },
+                chooseFramework: "生成するフレームワークを選択してください",
+                addTable: "テーブルを追加",
+                inputTable: "テーブル名を入力してください",
+                tableName: "テーブル名",
+                columnName: "フィールド名",
+                addColumn: "フィールドを追加",
+                unsupport: "サポートされていないフレームワーク！",
+                chooseOne: "最低でも1つのフレームワークを選択してください！",
+                code: "生成されたコードの使用方法",
+                codeIntroduce: {
+                    i: "Webフレームワークで生成されたコードとは異なり、生成されたORMコードはdatabaseパッケージに配置され、各テーブルに対応するstructが生成されます。各structにはCreate、Delete、Update、Getの4つのメソッドがデフォルトで含まれています。",
+                    ii: "Newした後、database.Open()を使用して初期化する必要があります（Newした数に関係なく、1回だけ初期化が必要です）。",
+                    iii: "以下はTestテーブルを使用する例です。",
+                    iiii: "したがって、modelをservicecontextに配置できます。例えば、sctx.goファイルを次のように変更します。",
+                    iiiii: "その後、main.goでdatabase.Openを呼び出すだけで、sctxでModelを使用できます。"
+                },
+                showCode: "生成されたコードの使用方法を表示"
             }
         },
         en: {
@@ -200,16 +252,20 @@ export const i18n = createI18n({
                 save: "Save",
                 delete: "Delete",
                 saveOK: "Saved successfully!",
-                operation: "Operation"
+                operation: "Operation",
+                type: "Type",
+                generateOK: "Generated successfully!",
+                close: "Close"
             },
             app: {
                 menu: {
-                    setting: "Settings",
+                    setting: "Setting",
                     index: "Home",
                     middleware: "Middleware",
                     types: "Global Types",
                     methods: "Routes",
-                    config: "Config"
+                    config: "Configuration",
+                    database: "Database"
                 },
                 initProject: "Initialize Project",
                 init: "Initialize",
@@ -219,16 +275,16 @@ export const i18n = createI18n({
                 initOK: "Initialization successful!",
             },
             setting: {
-                languageSetting: "Language Settings",
+                languageSetting: "Language Setting",
                 language: "Language",
                 languageTip: "Please select a language",
                 save: "Save",
                 saveOk: "Saved successfully!",
                 about: "About",
-                aboutText: "View Details",
+                aboutText: "View details",
                 version: "Version Number",
                 developEnvironment: "Development Environment",
-                goInstall: "Please install Go language first!",
+                goInstall: "Please install Go first!",
             },
             index: {
                 openProject: 'Open Project',
@@ -245,7 +301,7 @@ export const i18n = createI18n({
             },
             middleware: {
                 introduce: {
-                    i: "Here you can add or remove middleware. Middleware can be applied globally or to a specific route group, and needs to be defined here in advance."
+                    i: "Here you can add or remove middleware. Middleware can be applied globally or to a specific route group and needs to be defined here in advance."
                 },
                 add: "Add Middleware",
                 input: "Please enter the middleware name",
@@ -284,9 +340,31 @@ export const i18n = createI18n({
                 introduce: {
                     i: "Configurations will load a set of JSON when the program starts. You can define fields here."
                 },
-                add: "Add Config",
-                name: "Config Name",
-                type: "Config Type"
+                add: "Add Configuration",
+                name: "Configuration Name",
+                type: "Configuration Type"
+            },
+            database: {
+                introduce: {
+                    i: "The database is used to generate ORM code for the database. Unlike other parts, the database section generates code separately as an independent module."
+                },
+                chooseFramework: "Please select a framework to generate",
+                addTable: "Add Table",
+                inputTable: "Please enter the table name",
+                tableName: "Table Name",
+                columnName: "Column Name",
+                addColumn: "Add Column",
+                unsupport: "Unsupported framework!",
+                chooseOne: "Please select at least one framework!",
+                code: "Instructions for using the generated code",
+                codeIntroduce: {
+                    i: "Unlike the code generated by the web framework, the generated ORM code is located in the database package. A struct is generated for each table, and each struct comes with four default methods: Create, Delete, Update, and Get.",
+                    ii: "After calling New, you need to initialize it using database.Open() (regardless of how many New instances you create, you only need to call Open once).",
+                    iii: "Below is an example of using a Test table.",
+                    iiii: "Therefore, you can put the model into the service context. For example, modify the sctx.go file as follows.",
+                    iiiii: "Then, you only need to call database.Open in main.go, and you can use the Model in sctx."
+                },
+                showCode: "Show instructions for using the generated code"
             }
         },
     }

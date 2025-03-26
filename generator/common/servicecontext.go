@@ -30,5 +30,7 @@ func NewServiceContext(c *config.Config) *ServiceContext {
 	`
 	sctx = strings.ReplaceAll(sctx, "{{projectName}}", project)
 
-	os.WriteFile(filepath.Join(workPath, "sctx.go"), []byte(sctx), os.ModePerm)
+	if !tool.FileExist(filepath.Join(workPath, "sctx.go")) {
+		os.WriteFile(filepath.Join(workPath, "sctx.go"), []byte(sctx), os.ModePerm)
+	}
 }

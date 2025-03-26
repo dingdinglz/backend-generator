@@ -8,4 +8,5 @@ type BackendGeneratorConfig struct {
 	Middlewares []string      `json:"middlewares"`
 	Methods     []interface{} `json:"methods"`
 	Configs     []ConfigField `json:"configs"`
+	Database    []OpenType    `json:"database"`
 }

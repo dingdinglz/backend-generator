@@ -58,10 +58,31 @@ export const store = createStore({
         },
         deleteConfig(state, name) {
             if (state.workspaceConfig.configs === null) {
+                return
             }
             for (let i = 0; i < state.workspaceConfig.configs.length; i++) {
                 if (state.workspaceConfig.configs[i].name === name) {
                     state.workspaceConfig.configs.splice(i, 1)
+                    break
+                }
+            }
+        },
+        addTable(state) {
+            if (state.workspaceConfig.database === null) {
+                state.workspaceConfig.database = []
+            }
+            state.workspaceConfig.database.push({
+                name: "",
+                fields: []
+            })
+        },
+        deleteTable(state, name) {
+            if (state.workspaceConfig.database === null) {
+                return
+            }
+            for (let i = 0; i < state.workspaceConfig.database.length; i++) {
+                if (state.workspaceConfig.database[i].name === name) {
+                    state.workspaceConfig.database.splice(i, 1)
                     break
                 }
             }
