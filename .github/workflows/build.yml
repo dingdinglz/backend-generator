@@ -1,0 +1,44 @@
+name: Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22.x]
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.22'
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: 'frontend/package-lock.json'
+
+    - name: install wails
+      run: go install github.com/wailsapp/wails/v2/cmd/wails@latest
+
+    - name: install dependences
+      run: sudo apt update && sudo apt install -y libwebkit2gtk-4.0-dev
+
+    - name: build
+      run: wails build -o backendgenerator-linux
+
+    - name: update release
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "build/bin/backendgenerator-linux"
+        allowUpdates: true
