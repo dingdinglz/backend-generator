@@ -20,10 +20,10 @@ func (g *Generator) Middleware() {
 		funcName := strings.ToUpper(i[:1]) + i[1:]
 		f := gg.NewGroup()
 		f.AddPackage("middleware")
-		f.NewImport().AddPath("github.com/gin-gonic/gin")
+		f.NewImport().AddPath("github.com/gin-gonic/gin").AddPath(g.ModName + "/servicecontext")
 		f.NewFunction(funcName).AddResult("", "gin.HandlerFunc").AddBody(
 			"return func(ctx *gin.Context) {}",
-		)
+		).AddParameter("sctx", "*servicecontext.ServiceContext")
 		if !tool.FileExist(filepath.Join(middlewarePath, fileName)) {
 			os.WriteFile(filepath.Join(middlewarePath, fileName), []byte(f.String()), os.ModePerm)
 		}

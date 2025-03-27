@@ -38,7 +38,7 @@ func generateGroupMethodBinds(iii []string, routePac string, im string, group st
 		regroup = group + routePac + "group"
 		res += regroup + ":= " + group + ".Group(\"" + path + "\""
 		for _, i := range middlewares {
-			res += ",middleware." + strings.ToUpper(i[:1]) + i[1:] + "()"
+			res += ",middleware." + strings.ToUpper(i[:1]) + i[1:] + "(scvx)"
 		}
 		res += ")\n"
 	}
