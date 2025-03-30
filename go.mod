@@ -1,11 +1,10 @@
 module backend-generator
 
-go 1.22.0
-
-toolchain go1.23.5
+go 1.23.5
 
 require (
 	github.com/Xuanwo/gg v0.3.0
+	github.com/dingdinglz/openai v1.1.0
 	github.com/wailsapp/wails/v2 v2.10.1
 )
 
@@ -13,6 +12,7 @@ require (
 	github.com/Xuanwo/go-bufferpool v0.2.0 // indirect
 	github.com/bep/debounce v1.2.1 // indirect
 	github.com/go-ole/go-ole v1.3.0 // indirect
+	github.com/go-resty/resty/v2 v2.16.5 // indirect
 	github.com/godbus/dbus/v5 v5.1.0 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/jchv/go-winloader v0.0.0-20210711035445-715c2860da7e // indirect

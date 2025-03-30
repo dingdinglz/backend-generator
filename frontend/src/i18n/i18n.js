@@ -13,7 +13,8 @@ export const i18n = createI18n({
                 operation: "操作",
                 type: "类型",
                 generateOK: "生成成功！",
-                close: "关闭"
+                close: "关闭",
+                introduce: "说明"
             },
             app: {
                 menu: {
@@ -43,6 +44,9 @@ export const i18n = createI18n({
                 version: "版本号",
                 developEnvironment: "开发环境",
                 goInstall: "请先安装Go语言！",
+                docGenerate: "文档生成",
+                docIntroduce: "文档生成利用llm进行，所以如需使用文档生成，请提供符合openai范式的baseurl，apikey和模型名，本工具不会对上述信息进行任何记录",
+                model: "模型名"
             },
             index: {
                 openProject: '打开项目',
@@ -55,7 +59,13 @@ export const i18n = createI18n({
                 generatorTip: "请选择要生成的框架",
                 generatorUn: "该框架的代码生成器正在开发中...",
                 generateNone: "请先选择一个框架！",
-                generateOK: "生成成功！"
+                generateOK: "生成成功！",
+                docGenerate: "生成api文档",
+                doc: {
+                    ok: "api文档生成成功，保存在api-doc.md文件中",
+                    set: "请先进入设置中进行设置",
+                    json: "配置文件有误，请删除setting.json重新设置"
+                }
             },
             middleware: {
                 introduce: {
