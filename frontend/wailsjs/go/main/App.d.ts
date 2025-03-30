@@ -5,6 +5,8 @@ export function GenerateCode(arg1:string):Promise<string>;
 
 export function GenerateDatabaseCode(arg1:string):Promise<string>;
 
+export function GenerateDoc():Promise<string>;
+
 export function GolangVersion():Promise<string>;
 
 export function SettingGet():Promise<string>;

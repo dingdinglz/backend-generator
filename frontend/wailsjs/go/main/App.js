@@ -10,6 +10,10 @@ export function GenerateDatabaseCode(arg1) {
   return window['go']['main']['App']['GenerateDatabaseCode'](arg1);
 }
 
+export function GenerateDoc() {
+  return window['go']['main']['App']['GenerateDoc']();
+}
+
 export function GolangVersion() {
   return window['go']['main']['App']['GolangVersion']();
 }

@@ -24,11 +24,13 @@
         <el-button type="primary" @click="Generate">{{ $t("index.generate") }}</el-button>
       </el-col>
     </el-row>
+    <el-divider></el-divider>
+    <el-button type="primary" @click="GenerateDocV" v-loading="docGenerating">{{ $t("index.docGenerate") }}</el-button>
   </div>
 </template>
 <script>
 import {
-  GenerateCode,
+  GenerateCode, GenerateDoc,
   WorkSpaceConfigGet,
   WorkSpaceConfigSave,
   WorkSpaceGet,
@@ -41,6 +43,7 @@ export default {
     return {
       workspace: "",
       generator: "",
+      docGenerating: false
     }
   },
   async mounted() {
@@ -81,6 +84,27 @@ export default {
               ElMessage.success(that.$t("index.generateOK"))
             }
           })
+    },
+    GenerateDocV() {
+      if (this.docGenerating) return
+      this.docGenerating = true
+      const that = this
+      GenerateDoc().then(res => {
+        this.docGenerating = false
+        if (res === "") {
+          ElMessage.success(that.$t("index.doc.ok"))
+          return
+        }
+        if (res === "set") {
+          ElMessage.error(that.$t("index.doc.set"))
+          return
+        }
+        if (res === "json") {
+          ElMessage.error(that.$t("index.doc.json"))
+          return
+        }
+        ElMessage.error(res)
+      })
     }
   },
 }

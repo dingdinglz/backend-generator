@@ -20,6 +20,21 @@
         <span>{{ goVersion }}</span>
       </el-form-item>
       <el-divider content-position="left">
+        {{ $t("setting.docGenerate") }}
+      </el-divider>
+      <el-form-item :label="$t('common.introduce')">
+        {{ $t("setting.docIntroduce") }}
+      </el-form-item>
+      <el-form-item label="base_url">
+        <el-input v-model="settingForm.ai.base" placeholder="base_url"></el-input>
+      </el-form-item>
+      <el-form-item label="api_key">
+        <el-input v-model="settingForm.ai.key" placeholder="apikey"></el-input>
+      </el-form-item>
+      <el-form-item :label="$t('setting.model')">
+        <el-input v-model="settingForm.ai.model" :placeholder="$t('setting.model')"></el-input>
+      </el-form-item>
+      <el-divider content-position="left">
         {{ $t("setting.about") }}
       </el-divider>
       <el-form-item :label="$t('app.author')">
@@ -61,6 +76,11 @@ export default {
         language: {
           locale: "",
         },
+        ai: {
+          base: "",
+          key: "",
+          model: ""
+        }
       }),
       version: "",
       goVersion: ""
