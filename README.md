@@ -15,6 +15,7 @@ Backend-generator is a tool that helps developers quickly generate backend code 
 - Supports generating database code, such as gorm.
 - Simple and intuitive visual UI interface.
 - Support multiple languages, such as Chinese, English, and Japanese.
+- Support for one-click generation of API documentation.
 
 ## Supported Frameworks
 
