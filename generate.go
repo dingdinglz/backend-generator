@@ -2,6 +2,7 @@ package main
 
 import (
 	"backend-generator/generator/common"
+	"backend-generator/generator/fiber"
 	"backend-generator/generator/gin"
 	"backend-generator/generator/gorm"
 	"backend-generator/global"
@@ -15,6 +16,11 @@ func (app *App) GenerateCode(t string) string {
 	switch t {
 	case "gin":
 		Generator = &gin.Generator{
+			WorkPath: global.WorkSpace,
+			ModName:  strings.ToLower(global.WorkSpaceConfig.Name),
+		}
+	case "fiber":
+		Generator = &fiber.Generator{
 			WorkPath: global.WorkSpace,
 			ModName:  strings.ToLower(global.WorkSpaceConfig.Name),
 		}
