@@ -22,12 +22,12 @@ Backend-generator is a tool that helps developers quickly generate backend code 
 ### Web
 
 - gin
-- go-fiber (TODO)
+- go-fiber
 - ... (more frameworks in progress)
 
 ### Database
 
-- gorm (TODO)
+- gorm
 - ... (more databases in progress)
 
 ## Usage

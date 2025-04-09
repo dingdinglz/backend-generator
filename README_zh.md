@@ -22,12 +22,12 @@ backend-generator是一款帮助开发者通过可视化UI对项目结构进行�
 ### Web
 
 - gin
-- go-fiber (TODO)
+- go-fiber
 - ...（更多框架支持中）
 
 ### Database
 
-- gorm (TODO)
+- gorm
 - ...（更多数据库支持中）
 
 ## 使用
